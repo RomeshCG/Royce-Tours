@@ -1,43 +1,102 @@
+import { Link } from 'react-router-dom';
+import logo from '../assets/roycelogo.png';
+import facebookIcon from '../assets/facebook.png';
+import instagramIcon from '../assets/instagram.png';
+import twitterIcon from '../assets/x.png';
+import youtubeIcon from '../assets/youtube.png';
+
 const Footer = () => (
-  <footer className="bg-gray-900 text-gray-200 py-8 mt-16">
-    <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <h2 className="text-lg font-bold mb-2">Royce Tours & Travels</h2>
-        <p className="text-sm mb-2">Discover the magic of Sri Lanka with our expertly crafted tours. We’re passionate about sharing the beauty, culture, and wonders of this island nation.</p>
-        <p className="text-xs">123 Main Road, Colombo 03, Sri Lanka</p>
-        <p className="text-xs">+94 77 123 4567</p>
-        <p className="text-xs">info@roycetours.lk</p>
+  <footer className="bg-slate-800 text-white py-12 mt-16">
+    <div className="max-w-6xl mx-auto px-6">
+      {/* Top Section - Three Columns */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        {/* Left Column - Company Information */}
+        <div className="space-y-4">
+          {/* Logo and Name */}
+          <div className="flex items-center gap-3 mb-4">
+            <img src={logo} alt="Royce Tours & Travels" className="h-24 w-auto" />
+          </div>
+          
+          {/* Description */}
+          <p className="text-gray-300 leading-relaxed">
+            Discover the magic of Sri Lanka with our expertly crafted tours. We're passionate about sharing the beauty, culture, and adventures that make our island nation truly special.
+          </p>
+          
+          {/* Contact Details */}
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
+              <span className="text-blue-400">📍</span>
+              <span className="text-gray-300">123 Galle Road, Colombo 03, Sri Lanka</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-blue-400">📞</span>
+              <span className="text-gray-300">+94 77 123 4567</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-blue-400">✉️</span>
+              <span className="text-gray-300">info@roycetours.lk</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Middle Column - Quick Links */}
+        <div>
+          <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
+          <ul className="space-y-2">
+            <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link></li>
+            <li><Link to="/tours" className="text-gray-300 hover:text-white transition-colors">Tour Packages</Link></li>
+            <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
+            <li><Link to="/gallery" className="text-gray-300 hover:text-white transition-colors">Gallery</Link></li>
+            <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
+            <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Testimonials</a></li>
+          </ul>
+        </div>
+
+        {/* Right Column - Popular Tours */}
+        <div>
+          <h3 className="text-lg font-bold text-white mb-4">Popular Tours</h3>
+          <ul className="space-y-2">
+            <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Cultural Triangle</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Beach Escape</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Hill Country</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Wildlife Safari</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Honeymoon Package</a></li>
+            <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Custom Tours</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h3 className="font-semibold mb-2">Quick Links</h3>
-        <ul className="space-y-1 text-sm">
-          <li><a href="/" className="hover:underline">Home</a></li>
-          <li><a href="/tours" className="hover:underline">Tour Packages</a></li>
-          <li><a href="/about" className="hover:underline">About Us</a></li>
-          <li><a href="/gallery" className="hover:underline">Gallery</a></li>
-          <li><a href="/contact" className="hover:underline">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 className="font-semibold mb-2">Popular Tours</h3>
-        <ul className="space-y-1 text-sm">
-          <li>Cultural Triangle</li>
-          <li>Beach Escape</li>
-          <li>Hill Country</li>
-          <li>Wildlife Safari</li>
-          <li>Honeymoon Packages</li>
-        </ul>
-      </div>
-      <div>
-        <h3 className="font-semibold mb-2">Follow us</h3>
-        <div className="flex space-x-4 mt-2">
-          <a href="#" className="hover:text-blue-400"><i className="fab fa-facebook-f"></i>FB</a>
-          <a href="#" className="hover:text-blue-400"><i className="fab fa-instagram"></i>IG</a>
-          <a href="#" className="hover:text-blue-400"><i className="fab fa-twitter"></i>TW</a>
+
+      {/* Divider Line */}
+      <div className="border-t border-gray-600 mb-6"></div>
+
+      {/* Bottom Section */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Left Side - Follow Us */}
+        <div className="flex items-center gap-4">
+          <span className="text-gray-300">Follow us:</span>
+          <div className="flex gap-3">
+            <a href="#" className="w-12 h-12 border border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-slate-800 transition-colors">
+              <img src={facebookIcon} alt="Facebook" className="w-6 h-6" />
+            </a>
+            <a href="#" className="w-12 h-12 border border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-slate-800 transition-colors">
+              <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
+            </a>
+            <a href="#" className="w-12 h-12 border border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-slate-800 transition-colors">
+              <img src={twitterIcon} alt="Twitter" className="w-6 h-6" />
+            </a>
+            <a href="#" className="w-12 h-12 border border-white rounded-full flex items-center justify-center text-white hover:bg-white hover:text-slate-800 transition-colors">
+              <img src={youtubeIcon} alt="YouTube" className="w-6 h-6" />
+            </a>
+          </div>
+        </div>
+
+        {/* Right Side - Copyright */}
+        <div className="text-center md:text-right">
+          <p className="text-gray-300 text-sm">© {new Date().getFullYear()} Royce Tours & Travels. All rights reserved.</p>
+          <p className="text-gray-400 text-xs mt-1">Licensed by Sri Lanka Tourism Development Authority</p>
         </div>
       </div>
     </div>
-    <div className="text-center text-xs text-gray-400 mt-8">© 2024 Royce Tours & Travels. All rights reserved.</div>
   </footer>
 );
 
