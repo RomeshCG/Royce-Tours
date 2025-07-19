@@ -8,9 +8,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Missing Supabase environment variables')
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
-
-// Typed Supabase client
-export const typedSupabase = createClient<Database>(supabaseUrl, supabaseAnonKey)
+// Create only one Supabase client instance
+export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey)
 
 export default supabase 

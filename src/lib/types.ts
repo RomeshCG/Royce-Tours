@@ -2,6 +2,35 @@
 export interface Database {
   public: {
     Tables: {
+      profiles: {
+        Row: {
+          id: string
+          email: string
+          first_name: string
+          last_name: string
+          role: 'user' | 'admin'
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id: string
+          email: string
+          first_name: string
+          last_name: string
+          role?: 'user' | 'admin'
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          email?: string
+          first_name?: string
+          last_name?: string
+          role?: 'user' | 'admin'
+          created_at?: string
+          updated_at?: string
+        }
+      }
       tours: {
         Row: {
           id: string
@@ -109,4 +138,39 @@ export interface Database {
       [_ in never]: never
     }
   }
+}
+
+// User types
+export interface User {
+  id: string
+  email: string
+  first_name: string
+  last_name: string
+  role: 'user' | 'admin'
+  created_at: string
+  updated_at: string
+}
+
+export interface AuthUser {
+  id: string
+  email: string
+  user_metadata: {
+    first_name: string
+    last_name: string
+  }
+  app_metadata: {
+    role?: 'user' | 'admin'
+  }
+}
+
+export interface SignUpData {
+  email: string
+  password: string
+  first_name: string
+  last_name: string
+}
+
+export interface SignInData {
+  email: string
+  password: string
 } 

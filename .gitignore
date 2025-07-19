@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Supabase setup documentation (contains sensitive setup info)
+SUPABASE_SETUP.md  
